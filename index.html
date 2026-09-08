@@ -8,6 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -29,7 +33,7 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#why-me">Why Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="btn btn-yellow ms-3" href="#contact">Consultation</a></li>
+                    <li class="nav-item"><a class="btn btn-yellow ms-lg-3 ms-0 mt-3 mt-lg-0 w-100 w-lg-auto text-center" href="#contact">Consultation</a></li>
                 </ul>
             </div>
         </div>
@@ -46,32 +50,118 @@
 
                 <div class="position-relative z-2">
                     
-                    <!-- Headline flanked with Arrow Navs -->
-                    <div class="d-flex align-items-center justify-content-center gap-3 gap-md-5 mb-4">
-                        <div class="hero-nav-arrow d-none d-md-flex align-items-center">
-                            <span class="hero-nav-line"></span>
-                            <i class="fas fa-chevron-right text-yellow"></i>
+                    <!-- Hero Carousel Slider (Auto-Cycling) -->
+                    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="false">
+                        
+                        <div class="hero-carousel-container position-relative">
+                            
+                            <!-- Left Flanking Interactive Arrow Control -->
+                            <button class="hero-nav-arrow hero-nav-prev d-none d-md-inline-flex" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous Slide">
+                                <i class="fas fa-chevron-left text-yellow"></i>
+                                <span class="hero-nav-line"></span>
+                            </button>
+
+                            <!-- Carousel Slides -->
+                            <div class="carousel-inner">
+                                
+                                <!-- Slide 1: Growth & Revenue Engine (Default) -->
+                                <div class="carousel-item active">
+                                    <div class="hero-slide-content">
+                                        <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3 hero-slide-badge">
+                                            <i class="fas fa-chart-line me-1 text-yellow"></i> Digital Growth Engine
+                                        </span>
+                                        <h1 class="display-3 fw-bolder text-white mb-4 lh-sm hero-slide-title">
+                                            Stop Posting Content.<br>
+                                            <span class="text-gradient-gold">Start Driving Revenue.</span>
+                                        </h1>
+                                        <p class="lead text-light mb-5 fs-5 mx-auto hero-slide-desc" style="max-width: 720px;">
+                                            Hi, I'm Naveen R - a Digital Marketing & Web Development Specialist focused on one thing: turning attention into measurable revenue.
+                                        </p>
+                                        <div class="hero-slide-cta d-flex flex-wrap align-items-center justify-content-center gap-3">
+                                            <a href="#contact" class="btn btn-yellow btn-lg px-5 py-3 fw-bold rounded-3 fs-6">Build My Engine <i class="fas fa-arrow-right ms-2"></i></a>
+                                            <a href="#services" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold rounded-3 fs-6 hero-secondary-btn">Explore Services</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Paid Ads & Acquisition -->
+                                <div class="carousel-item">
+                                    <div class="hero-slide-content">
+                                        <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3 hero-slide-badge">
+                                            <i class="fas fa-bullseye me-1 text-yellow"></i> Paid Ads & Acquisition
+                                        </span>
+                                        <h1 class="display-3 fw-bolder text-white mb-4 lh-sm hero-slide-title">
+                                            Scale Customer Acquisition.<br>
+                                            <span class="text-gradient-gold">Lower Your Ad Cost.</span>
+                                        </h1>
+                                        <p class="lead text-light mb-5 fs-5 mx-auto hero-slide-desc" style="max-width: 720px;">
+                                            Targeted Meta & Google Ad campaigns engineered with high-converting copy and AI-powered creatives that turn clicks into paying clients.
+                                        </p>
+                                        <div class="hero-slide-cta d-flex flex-wrap align-items-center justify-content-center gap-3">
+                                            <a href="#contact" class="btn btn-yellow btn-lg px-5 py-3 fw-bold rounded-3 fs-6">Launch Paid Ads <i class="fas fa-arrow-right ms-2"></i></a>
+                                            <a href="#why-me" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold rounded-3 fs-6 hero-secondary-btn">Why Choose Me</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Web Engineering -->
+                                <div class="carousel-item">
+                                    <div class="hero-slide-content">
+                                        <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3 hero-slide-badge">
+                                            <i class="fas fa-laptop-code me-1 text-yellow"></i> Custom Web Engineering
+                                        </span>
+                                        <h1 class="display-3 fw-bolder text-white mb-4 lh-sm hero-slide-title">
+                                            High-Speed Custom Websites.<br>
+                                            <span class="text-gradient-gold">Engineered To Convert.</span>
+                                        </h1>
+                                        <p class="lead text-light mb-5 fs-5 mx-auto hero-slide-desc" style="max-width: 720px;">
+                                            Bespoke web applications and e-commerce stores built with clean code, lightning load times, zero templates, and frictionless conversions.
+                                        </p>
+                                        <div class="hero-slide-cta d-flex flex-wrap align-items-center justify-content-center gap-3">
+                                            <a href="#contact" class="btn btn-yellow btn-lg px-5 py-3 fw-bold rounded-3 fs-6">Build Custom Site <i class="fas fa-arrow-right ms-2"></i></a>
+                                            <a href="#about" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold rounded-3 fs-6 hero-secondary-btn">About Naveen</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: 360° Growth System -->
+                                <div class="carousel-item">
+                                    <div class="hero-slide-content">
+                                        <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3 hero-slide-badge">
+                                            <i class="fas fa-crown me-1 text-yellow"></i> End-To-End System
+                                        </span>
+                                        <h1 class="display-3 fw-bolder text-white mb-4 lh-sm hero-slide-title">
+                                            Content + Ads + Website.<br>
+                                            <span class="text-gradient-gold">One Unified Pipeline.</span>
+                                        </h1>
+                                        <p class="lead text-light mb-5 fs-5 mx-auto hero-slide-desc" style="max-width: 720px;">
+                                            Eliminate fragmented freelancers. Get a fully synchronized growth ecosystem that systematically turns cold traffic into lifelong customers.
+                                        </p>
+                                        <div class="hero-slide-cta d-flex flex-wrap align-items-center justify-content-center gap-3">
+                                            <a href="#contact" class="btn btn-yellow btn-lg px-5 py-3 fw-bold rounded-3 fs-6">Book Free Audit <i class="fas fa-arrow-right ms-2"></i></a>
+                                            <a href="#services" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold rounded-3 fs-6 hero-secondary-btn">View All Services</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Right Flanking Interactive Arrow Control -->
+                            <button class="hero-nav-arrow hero-nav-next d-none d-md-inline-flex" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next Slide">
+                                <span class="hero-nav-line"></span>
+                                <i class="fas fa-chevron-right text-yellow"></i>
+                            </button>
+
                         </div>
 
-                        <h1 class="display-3 fw-bolder text-white m-0 lh-sm">
-                            Stop Posting Content.<br>
-                            <span class="text-yellow">Start Driving Revenue.</span>
-                        </h1>
-
-                        <div class="hero-nav-arrow d-none d-md-flex align-items-center">
-                            <i class="fas fa-chevron-left text-yellow"></i>
-                            <span class="hero-nav-line"></span>
+                        <!-- Modern Carousel Indicator Dots -->
+                        <div class="hero-carousel-indicators d-flex align-items-center justify-content-center gap-2 mt-4">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="hero-indicator-dot active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" class="hero-indicator-dot" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" class="hero-indicator-dot" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" class="hero-indicator-dot" aria-label="Slide 4"></button>
                         </div>
-                    </div>
 
-                    <!-- Subtitle -->
-                    <p class="lead text-light mb-5 fs-5 mx-auto" style="max-width: 720px;">
-                        Hi, I'm Naveen R - a Digital Marketing & Web Development Specialist focused on one thing: turning attention into measurable revenue.
-                    </p>
-
-                    <!-- Primary CTA Button -->
-                    <div>
-                        <a href="#contact" class="btn btn-yellow btn-lg px-5 py-3 fw-bold rounded-3 fs-6">Build My Engine</a>
                     </div>
 
                 </div>
@@ -148,26 +238,30 @@
     <!-- 3. About Me -->
     <section id="about" class="py-5 position-relative">
         <div class="container py-4">
-            <div class="row align-items-center g-4">
+            <div class="row align-items-center g-5">
                 
-                <!-- Left Column with img2.png Dashboard & Floating Badges -->
-                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right">
-                    <div class="about-image-wrapper position-relative me-lg-2 w-100">
+                <!-- Left Column with Luxury Portrait Card & Ambient Backlight Glow -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-portrait-card position-relative">
+                        
+                        <!-- Ambient Radial Backlight Glow -->
+                        <div class="about-portrait-aura"></div>
                         
                         <!-- Floating Badge Top Right -->
                         <div class="about-floating-badge about-badge-top-right" data-aos="zoom-in" data-aos-delay="300">
                             <div class="about-badge-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <div>
-                                <div class="fw-bold text-white fs-6">10x Growth</div>
-                                <div class="small text-yellow">Data-Driven Results</div>
+                            <div class="about-badge-text">
+                                <div class="about-badge-title">10x Growth</div>
+                                <div class="about-badge-subtitle">Data-Driven Results</div>
                             </div>
                         </div>
 
-                        <!-- Image Container with Glowing Golden Border -->
-                        <div class="about-img-container">
-                            <img src="IMG_0812.PNG" alt="Growth Systems & Analytics" class="img-fluid about-custom-img">
+                        <!-- Image Container with Luxury Obsidian Glass Frame & Vignette Blend -->
+                        <div class="about-portrait-frame">
+                            <img src="IMG_0812.PNG" alt="Naveen R. - Digital Growth Specialist" class="img-fluid about-custom-img">
+                            <div class="about-portrait-overlay"></div>
                         </div>
 
                         <!-- Floating Badge Bottom Left -->
@@ -175,86 +269,175 @@
                             <div class="about-badge-icon">
                                 <i class="fas fa-bullseye"></i>
                             </div>
-                            <div>
-                                <div class="fw-bold text-white fs-6">ROI Focus</div>
-                                <div class="small text-yellow">Zero Guesswork</div>
+                            <div class="about-badge-text">
+                                <div class="about-badge-title">ROI Focus</div>
+                                <div class="about-badge-subtitle">Zero Guesswork</div>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <!-- Right Text Content Column -->
                 <div class="col-lg-6" data-aos="fade-left">
-                    <span class="badge badge-yellow-soft rounded-pill px-3 py-2 text-uppercase mb-3">About Naveen R.</span>
-                    <h2 class="display-5 fw-bold text-white mb-4">Growth Doesn't Come From Posting — <span class="text-yellow">It Comes From Systems.</span></h2>
-                    
-                    <p class="text-light fs-5 mb-4">In today's crowded digital world, most businesses waste time posting random content without a strategy. I analyze your business, study your competitors, and build custom growth engines designed to turn attention into revenue.</p>
+                    <div class="about-content-wrapper">
+                        <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3">
+                            <i class="fas fa-sparkles me-1 text-yellow"></i> About Naveen R.
+                        </span>
+                        
+                        <h2 class="display-5 fw-bold text-white mb-4 about-main-title">
+                            Growth Doesn't Come From Posting — <br>
+                            <span class="text-gradient-gold">It Comes From Systems.</span>
+                        </h2>
+                        
+                        <p class="about-lead text-light mb-4">
+                            In today's crowded digital world, most businesses waste countless hours posting random content without a strategy. I analyze your business, audit competitor blindspots, and build <strong class="text-white">engineered growth pipelines</strong> designed to turn attention into scalable revenue.
+                        </p>
 
-                    <!-- Key Pillars Highlights -->
-                    <div class="d-flex flex-column gap-3 mb-4">
-                        <div class="about-feature-box d-flex align-items-center gap-3">
-                            <div class="about-badge-icon flex-shrink-0">
-                                <i class="fas fa-brain"></i>
+                        <!-- Key Pillars Highlights -->
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <div class="about-feature-box">
+                                <div class="about-feature-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white fw-bold mb-1 fs-6">Data & Psychology Backed</h5>
+                                    <p class="text-muted small mb-0">Every decision is guided by analytics, human psychology, and market validation — zero guesswork.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h6 class="text-white fw-bold mb-1">Data & Psychology Backed</h6>
-                                <p class="text-muted small mb-0">Every decision is guided by analytics, human psychology, and market behavior — not guesswork.</p>
+
+                            <div class="about-feature-box">
+                                <div class="about-feature-icon">
+                                    <i class="fas fa-sitemap"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white fw-bold mb-1 fs-6">Tailored Growth Funnels</h5>
+                                    <p class="text-muted small mb-0">Custom pipeline built specifically for your goals, whether you are scaling a local business, personal brand, or startup.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="about-feature-box d-flex align-items-center gap-3">
-                            <div class="about-badge-icon flex-shrink-0">
-                                <i class="fas fa-sitemap"></i>
+                        <!-- Executive Glass Quote Card -->
+                        <div class="about-quote-card">
+                            <div class="quote-symbol">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div>
-                                <h6 class="text-white fw-bold mb-1">Tailored Growth Funnels</h6>
-                                <p class="text-muted small mb-0">Custom pipeline built specifically for your goals, whether you are a local business, personal brand, or startup.</p>
-                            </div>
+                            <p class="quote-text mb-0">
+                                "If you're serious about growing your business online, I'm here to build the engine that gets you there."
+                            </p>
                         </div>
                     </div>
-
-                    <!-- Highlight Quote Card -->
-                    <div class="about-quote-card">
-                        <i class="fas fa-quote-left text-yellow me-2"></i>
-                        <span class="text-yellow fw-bold fs-5">If you're serious about growing your business online, I'm here to build the engine that gets you there.</span>
-                    </div>
-
                 </div>
+
             </div>
         </div>
 
-        <!-- Sleek Stats Bar -->
+        <!-- Sleek Infinite Stats Marquee Bar -->
         <div class="stats-counter-section py-4 mt-5">
-            <div class="container">
-                <div class="row text-center g-4">
-                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="stat-item-number">150+</div>
-                        <div class="stat-item-label">Growth Systems Built</div>
+            <div class="stats-marquee-wrapper">
+                <div class="stats-marquee-track">
+                    
+                    <!-- Marquee Group 1 -->
+                    <div class="stats-marquee-group">
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">150+</span>
+                            <span class="stat-item-label">Growth Systems Built</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-star"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">5x</span>
+                            <span class="stat-item-label">Average ROI Multiplier</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-bolt"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">98%</span>
+                            <span class="stat-item-label">Client Retention Rate</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-star"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">100%</span>
+                            <span class="stat-item-label">Data-Backed Strategy</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-bolt"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">$10M+</span>
+                            <span class="stat-item-label">Revenue Generated</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-star"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">24/7</span>
+                            <span class="stat-item-label">Ongoing Growth Optimization</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-bolt"></i></span>
                     </div>
-                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="stat-item-number">5x</div>
-                        <div class="stat-item-label">Average ROI Multiplier</div>
+
+                    <!-- Marquee Group 2 (Duplicate for Seamless Infinite Loop) -->
+                    <div class="stats-marquee-group" aria-hidden="true">
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">150+</span>
+                            <span class="stat-item-label">Growth Systems Built</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-star"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">5x</span>
+                            <span class="stat-item-label">Average ROI Multiplier</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-bolt"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">98%</span>
+                            <span class="stat-item-label">Client Retention Rate</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-star"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">100%</span>
+                            <span class="stat-item-label">Data-Backed Strategy</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-bolt"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">$10M+</span>
+                            <span class="stat-item-label">Revenue Generated</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-star"></i></span>
+
+                        <div class="stat-marquee-item">
+                            <span class="stat-item-number">24/7</span>
+                            <span class="stat-item-label">Ongoing Growth Optimization</span>
+                        </div>
+                        <span class="marquee-separator"><i class="fas fa-bolt"></i></span>
                     </div>
-                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="stat-item-number">98%</div>
-                        <div class="stat-item-label">Client Retention Rate</div>
-                    </div>
-                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
-                        <div class="stat-item-number">100%</div>
-                        <div class="stat-item-label">Data-Backed Strategy</div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 4. Services -->
-    <section id="services" class="py-5 bg-darker">
-        <div class="container">
+    <section id="services" class="py-5 bg-darker position-relative overflow-hidden">
+        
+        <!-- Ambient Section Backlight Auras -->
+        <div class="services-ambient-glow services-glow-left"></div>
+        <div class="services-ambient-glow services-glow-right"></div>
+
+        <div class="container position-relative z-2">
             <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge badge-yellow-soft rounded-pill px-3 py-2 text-uppercase mb-3">Core Expertise</span>
-                <h2 class="display-5 fw-bold text-white mb-3">Scalable Digital Growth Services</h2>
-                <p class="text-gray lead mx-auto" style="max-width: 650px;">Website Development & Digital Growth Solutions built to generate traffic, convert leads, and maximize ROI.</p>
+                <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3">
+                    <i class="fas fa-layer-group me-1 text-yellow"></i> Core Capabilities
+                </span>
+                <h2 class="display-5 fw-bold text-white mb-3">
+                    Scalable <span class="text-gradient-gold">Digital Growth</span> Services
+                </h2>
+                <p class="text-gray lead mx-auto" style="max-width: 680px;">
+                    Website Development & Digital Growth Solutions engineered to generate qualified traffic, convert leads, and maximize ROI.
+                </p>
                 <div class="title-underline mx-auto mt-3"></div>
             </div>
 
@@ -263,20 +446,39 @@
                 <!-- Service Card 01 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card">
-                        <div>
+                        <div class="service-card-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
-                                <span class="service-number">01</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="service-pill-tag">Organic Reach</span>
+                                    <span class="service-number">01</span>
+                                </div>
                             </div>
                             <h3 class="service-title">Organic Growth Engine</h3>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>Social Media Strategy (Instagram, Facebook & YouTube)</span></li>
-                                <li><i class="fas fa-check"></i><span>Audience research & competitor analysis</span></li>
-                                <li><i class="fas fa-check"></i><span>30-Day Viral Content Blueprint</span></li>
-                                <li><i class="fas fa-check"></i><span>Hooks, scripts, and posting calendar</span></li>
-                                <li><i class="fas fa-check"></i><span>High-converting Reels creation (psychology-based)</span></li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Social Media Strategy (Instagram, Facebook & YouTube)</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Audience research & competitor analysis</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>30-Day Viral Content Blueprint</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Hooks, scripts, and posting calendar</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>High-converting Reels creation (psychology-based)</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="service-card-footer">
@@ -288,20 +490,39 @@
                 <!-- Service Card 02 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card">
-                        <div>
+                        <div class="service-card-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-bullseye"></i>
                                 </div>
-                                <span class="service-number">02</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="service-pill-tag">Paid Media</span>
+                                    <span class="service-number">02</span>
+                                </div>
                             </div>
                             <h3 class="service-title">Paid Ads & Acquisition System</h3>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>Meta Ads (Facebook + Instagram full funnel campaigns)</span></li>
-                                <li><i class="fas fa-check"></i><span>Google Ads (high-intent search targeting)</span></li>
-                                <li><i class="fas fa-check"></i><span>Conversion-focused ad copywriting</span></li>
-                                <li><i class="fas fa-check"></i><span>Campaign scaling strategy</span></li>
-                                <li><i class="fas fa-check"></i><span>AI-powered ad creatives (premium visuals)</span></li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Meta Ads (Facebook + Instagram full funnel campaigns)</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Google Ads (high-intent search targeting)</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Conversion-focused ad copywriting</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Campaign scaling strategy</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>AI-powered ad creatives (premium visuals)</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="service-card-footer">
@@ -313,19 +534,35 @@
                 <!-- Service Card 03 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card">
-                        <div>
+                        <div class="service-card-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-wand-magic-sparkles"></i>
                                 </div>
-                                <span class="service-number">03</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="service-pill-tag">AI Visuals</span>
+                                    <span class="service-number">03</span>
+                                </div>
                             </div>
                             <h3 class="service-title">AI-Powered Creative Production</h3>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>AI-powered promotional ads</span></li>
-                                <li><i class="fas fa-check"></i><span>High-converting brand creatives</span></li>
-                                <li><i class="fas fa-check"></i><span>Visual hooks for ads & reels</span></li>
-                                <li><i class="fas fa-check"></i><span>Cinematic style marketing content</span></li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>AI-powered promotional ads</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>High-converting brand creatives</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Visual hooks for ads & reels</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Cinematic style marketing content</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="service-card-footer">
@@ -337,20 +574,39 @@
                 <!-- Service Card 04 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-card">
-                        <div>
+                        <div class="service-card-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-laptop-code"></i>
                                 </div>
-                                <span class="service-number">04</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="service-pill-tag">Web & Stores</span>
+                                    <span class="service-number">04</span>
+                                </div>
                             </div>
                             <h3 class="service-title">Custom Website & E-Commerce</h3>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>Premium custom website design (no templates)</span></li>
-                                <li><i class="fas fa-check"></i><span>High-speed, clean coded websites</span></li>
-                                <li><i class="fas fa-check"></i><span>E-commerce store development</span></li>
-                                <li><i class="fas fa-check"></i><span>Secure payment integration</span></li>
-                                <li><i class="fas fa-check"></i><span>Inventory & checkout systems</span></li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Premium custom website design (no templates)</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>High-speed, clean coded websites</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>E-commerce store development</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Secure payment integration</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Inventory & checkout systems</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="service-card-footer">
@@ -362,19 +618,35 @@
                 <!-- Service Card 05 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-card">
-                        <div>
+                        <div class="service-card-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-magnifying-glass-chart"></i>
                                 </div>
-                                <span class="service-number">05</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="service-pill-tag">SEO & Speed</span>
+                                    <span class="service-number">05</span>
+                                </div>
                             </div>
                             <h3 class="service-title">SEO & Technical Optimization</h3>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>Full SEO optimization</span></li>
-                                <li><i class="fas fa-check"></i><span>Keyword & search intent strategy</span></li>
-                                <li><i class="fas fa-check"></i><span>Technical SEO setup</span></li>
-                                <li><i class="fas fa-check"></i><span>1 year free maintenance support</span></li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Full SEO optimization</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Keyword & search intent strategy</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Technical SEO setup</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>1 year free maintenance support</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="service-card-footer">
@@ -386,20 +658,39 @@
                 <!-- Service Card 06 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                     <div class="service-card">
-                        <div>
+                        <div class="service-card-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-rocket"></i>
                                 </div>
-                                <span class="service-number">06</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="service-pill-tag">Full Funnel</span>
+                                    <span class="service-number">06</span>
+                                </div>
                             </div>
                             <h3 class="service-title">End-to-End Scaling System</h3>
                             <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>Content + Ads + Website full pipeline</span></li>
-                                <li><i class="fas fa-check"></i><span>Automated lead generation system</span></li>
-                                <li><i class="fas fa-check"></i><span>Conversion rate optimization</span></li>
-                                <li><i class="fas fa-check"></i><span>ROI-focused strategy</span></li>
-                                <li><i class="fas fa-check"></i><span>A/B testing & scaling</span></li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Content + Ads + Website full pipeline</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Automated lead generation system</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>Conversion rate optimization</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>ROI-focused strategy</span>
+                                </li>
+                                <li>
+                                    <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                    <span>A/B testing & scaling</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="service-card-footer">
@@ -409,29 +700,61 @@
                 </div>
 
                 <!-- Service Card 07 (Featured VIP Card) -->
-                <div class="col-lg-6 col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="700">
+                <div class="col-lg-10 col-md-12 mx-auto" data-aos="fade-up" data-aos-delay="700">
                     <div class="service-card featured-card">
-                        <div>
+                        <div class="service-card-ambient featured-ambient"></div>
+                        <div class="service-card-body">
                             <div class="service-card-header">
                                 <div class="service-icon-box">
                                     <i class="fas fa-crown"></i>
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
-                                    <span class="badge badge-yellow-soft rounded-pill px-3 py-1">MOST POPULAR</span>
+                                    <span class="badge badge-yellow-glow rounded-pill px-3 py-1">
+                                        <i class="fas fa-crown me-1 text-yellow"></i> FLAGSHIP BLUEPRINT
+                                    </span>
                                     <span class="service-number">07</span>
                                 </div>
                             </div>
-                            <h3 class="service-title text-yellow">Strategy & Consultation</h3>
-                            <ul class="service-list">
-                                <li><i class="fas fa-check"></i><span>Full Business & Growth Audit</span></li>
-                                <li><i class="fas fa-check"></i><span>In-depth Competitor & Market Analysis</span></li>
-                                <li><i class="fas fa-check"></i><span>Custom Growth Blueprint Creation</span></li>
-                                <li><i class="fas fa-check"></i><span>Digital Funnel & Conversion Design</span></li>
-                                <li><i class="fas fa-check"></i><span>Free 1-on-1 Strategy Consultation Call</span></li>
-                            </ul>
-                        </div>
-                        <div class="service-card-footer">
-                            <a href="#contact" class="btn btn-yellow w-100 py-3 fw-bold">Book Free Strategy Call <i class="fas fa-arrow-right ms-2"></i></a>
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-7">
+                                    <h3 class="service-title text-yellow mb-3">Strategy & Growth Consultation</h3>
+                                    <ul class="service-list mb-0">
+                                        <li>
+                                            <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                            <span>Full Business & Growth Engine Audit</span>
+                                        </li>
+                                        <li>
+                                            <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                            <span>In-depth Competitor & Market Positioning Analysis</span>
+                                        </li>
+                                        <li>
+                                            <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                            <span>Custom High-ROI Growth Blueprint Creation</span>
+                                        </li>
+                                        <li>
+                                            <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                            <span>Full Digital Funnel & CRO Conversion Architecture</span>
+                                        </li>
+                                        <li>
+                                            <span class="service-check-icon"><i class="fas fa-check"></i></span>
+                                            <span>Free 1-on-1 Deep-Dive Strategy Consultation Call</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 text-center text-lg-start">
+                                    <div class="featured-card-cta-box p-4 rounded-4">
+                                        <div class="featured-cta-label text-gray small text-uppercase fw-bold mb-1">Direct Access</div>
+                                        <div class="featured-cta-title text-white fw-bold mb-3">Ready to scale without the guesswork?</div>
+                                        <a href="#contact" class="btn btn-yellow w-100 py-3 fw-bold rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2">
+                                            <span>Book Free Strategy Call</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                        <div class="featured-cta-note text-gray small text-center mt-2">
+                                            <i class="fas fa-shield-alt text-yellow me-1"></i> 100% Free · No Obligation
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -441,12 +764,14 @@
     </section>
 
     <!-- 5. Why Choose Me -->
-    <section id="why-me" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="zoom-in">
-                <span class="badge badge-yellow-soft rounded-pill px-3 py-2 text-uppercase mb-3">Competitive Advantage</span>
-                <h2 class="display-5 fw-bold text-white mb-3">Why Choose Naveen R.?</h2>
-                <p class="text-gray lead mx-auto" style="max-width: 600px;">Built for business owners who demand real ROI, transparency, and scalable digital systems.</p>
+    <section id="why-me" class="py-5 position-relative">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge badge-yellow-glow rounded-pill px-3 py-2 text-uppercase mb-3">
+                    <i class="fas fa-crown me-1 text-yellow"></i> Competitive Advantage
+                </span>
+                <h2 class="display-5 fw-bold text-white mb-3">Why Partner With <span class="text-gradient-gold">Naveen R.?</span></h2>
+                <p class="text-gray lead mx-auto" style="max-width: 650px;">Engineered for ambitious business owners who demand real ROI, full transparency, and scalable digital execution.</p>
                 <div class="title-underline mx-auto mt-3"></div>
             </div>
             <div class="row g-4">
@@ -454,72 +779,138 @@
                 <!-- Advantage Card 01 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-choose-card">
-                        <span class="why-card-number">01</span>
-                        <div class="why-icon-box">
-                            <i class="fas fa-briefcase"></i>
+                        <div class="why-card-ambient"></div>
+                        <div class="why-card-topbar">
+                            <div class="why-icon-box">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="why-tag-pill">REVENUE FIRST</span>
+                                <span class="why-card-number">01</span>
+                            </div>
                         </div>
                         <h4 class="why-card-title">Business-First Mindset</h4>
-                        <p class="why-card-desc">I focus on what actually matters — revenue, qualified leads, and long-term business growth. No vanity metrics, only real results.</p>
+                        <p class="why-card-desc">I focus exclusively on what moves your bottom line — <strong class="text-white">revenue, qualified leads, and measurable growth</strong>. Zero vanity metrics, only commercial results.</p>
+                        <div class="why-card-footer-pill">
+                            <i class="fas fa-check-circle text-yellow"></i>
+                            <span>Direct Revenue Attribution</span>
+                        </div>
+                        <div class="why-card-accent-line"></div>
                     </div>
                 </div>
 
                 <!-- Advantage Card 02 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="why-choose-card">
-                        <span class="why-card-number">02</span>
-                        <div class="why-icon-box">
-                            <i class="fas fa-puzzle-piece"></i>
+                        <div class="why-card-ambient"></div>
+                        <div class="why-card-topbar">
+                            <div class="why-icon-box">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="why-tag-pill">BESPOKE</span>
+                                <span class="why-card-number">02</span>
+                            </div>
                         </div>
-                        <h4 class="why-card-title">Tailored Strategies</h4>
-                        <p class="why-card-desc">Every business is unique. I craft custom digital growth systems engineered specifically for your market, goals, and audience.</p>
+                        <h4 class="why-card-title">Tailored Growth Architecture</h4>
+                        <p class="why-card-desc">Every market is unique. I engineer <strong class="text-white">custom digital growth systems</strong> calibrated specifically to your niche, customer psychology, and scaling targets.</p>
+                        <div class="why-card-footer-pill">
+                            <i class="fas fa-check-circle text-yellow"></i>
+                            <span>100% Custom Strategy Blueprint</span>
+                        </div>
+                        <div class="why-card-accent-line"></div>
                     </div>
                 </div>
 
                 <!-- Advantage Card 03 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="why-choose-card">
-                        <span class="why-card-number">03</span>
-                        <div class="why-icon-box">
-                            <i class="fas fa-infinity"></i>
+                        <div class="why-card-ambient"></div>
+                        <div class="why-card-topbar">
+                            <div class="why-icon-box">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="why-tag-pill">ALL-IN-ONE</span>
+                                <span class="why-card-number">03</span>
+                            </div>
                         </div>
                         <h4 class="why-card-title">End-to-End Execution</h4>
-                        <p class="why-card-desc">From strategy, content, and paid ads to custom web development and SEO — I handle everything seamlessly under one roof.</p>
+                        <p class="why-card-desc">From content strategy and paid acquisition funnels to <strong class="text-white">custom web development and SEO</strong> — everything operates seamlessly under one master strategy.</p>
+                        <div class="why-card-footer-pill">
+                            <i class="fas fa-check-circle text-yellow"></i>
+                            <span>Unified Pipeline & Zero Silos</span>
+                        </div>
+                        <div class="why-card-accent-line"></div>
                     </div>
                 </div>
 
                 <!-- Advantage Card 04 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="why-choose-card">
-                        <span class="why-card-number">04</span>
-                        <div class="why-icon-box">
-                            <i class="fas fa-chart-pie"></i>
+                        <div class="why-card-ambient"></div>
+                        <div class="why-card-topbar">
+                            <div class="why-icon-box">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="why-tag-pill">ANALYTICS</span>
+                                <span class="why-card-number">04</span>
+                            </div>
                         </div>
                         <h4 class="why-card-title">Data-Driven Decisions</h4>
-                        <p class="why-card-desc">Every move is backed by real-time analytics, user psychology, and market testing — zero guesswork or blind assumptions.</p>
+                        <p class="why-card-desc">Every strategic move is backed by <strong class="text-white">real-time analytics, user heatmaps, and empirical A/B testing</strong> — completely eliminating guesswork and blind bets.</p>
+                        <div class="why-card-footer-pill">
+                            <i class="fas fa-check-circle text-yellow"></i>
+                            <span>Empirical Proof & Split Testing</span>
+                        </div>
+                        <div class="why-card-accent-line"></div>
                     </div>
                 </div>
 
                 <!-- Advantage Card 05 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="why-choose-card">
-                        <span class="why-card-number">05</span>
-                        <div class="why-icon-box">
-                            <i class="fas fa-filter"></i>
+                        <div class="why-card-ambient"></div>
+                        <div class="why-card-topbar">
+                            <div class="why-icon-box">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="why-tag-pill">CRO FOCUSED</span>
+                                <span class="why-card-number">05</span>
+                            </div>
                         </div>
                         <h4 class="why-card-title">High-Converting Funnels</h4>
-                        <p class="why-card-desc">I don't just build websites or run ads — I construct complete, optimized lead funnels that turn visitors into paying customers.</p>
+                        <p class="why-card-desc">I don't just generate clicks — I build <strong class="text-white">high-converting digital sales engines</strong> that systematically turn casual visitors into loyal, paying clients.</p>
+                        <div class="why-card-footer-pill">
+                            <i class="fas fa-check-circle text-yellow"></i>
+                            <span>Psychology-Engineered Funnels</span>
+                        </div>
+                        <div class="why-card-accent-line"></div>
                     </div>
                 </div>
 
                 <!-- Advantage Card 06 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                     <div class="why-choose-card">
-                        <span class="why-card-number">06</span>
-                        <div class="why-icon-box">
-                            <i class="fas fa-headset"></i>
+                        <div class="why-card-ambient"></div>
+                        <div class="why-card-topbar">
+                            <div class="why-icon-box">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="why-tag-pill">PARTNERSHIP</span>
+                                <span class="why-card-number">06</span>
+                            </div>
                         </div>
-                        <h4 class="why-card-title">Long-Term Support</h4>
-                        <p class="why-card-desc">Your growth system continues evolving after launch. I provide ongoing optimization and 1-year technical maintenance support.</p>
+                        <h4 class="why-card-title">Dedicated Growth Support</h4>
+                        <p class="why-card-desc">Your digital engine doesn't stop after launch. I provide <strong class="text-white">continuous technical maintenance and funnel optimization</strong> to keep your business winning.</p>
+                        <div class="why-card-footer-pill">
+                            <i class="fas fa-check-circle text-yellow"></i>
+                            <span>1-Year Dedicated Maintenance</span>
+                        </div>
+                        <div class="why-card-accent-line"></div>
                     </div>
                 </div>
 
@@ -530,7 +921,7 @@
     <!-- 6. FAQ Section -->
     <section id="faq" class="py-5 bg-darker">
         <div class="container py-4">
-            <div class="row g-5 align-items-start">
+            <div class="row g-4 g-lg-5 align-items-start">
                 
                 <!-- Left Column: Display Header & CTA Card -->
                 <div class="col-lg-5" data-aos="fade-right">
@@ -646,7 +1037,7 @@
     <!-- 7. Contact / CTA Section -->
     <section id="contact" class="py-5 position-relative">
         <div class="container py-4">
-            <div class="row g-5 align-items-center">
+            <div class="row g-4 g-lg-5 align-items-center">
                 
                 <!-- Left Info & Value Props -->
                 <div class="col-lg-5" data-aos="fade-right">
@@ -729,7 +1120,7 @@
                                 <label class="form-label-custom">Tell Me About Your Business Goals</label>
                                 <div class="input-icon-wrapper textarea-wrapper">
                                     <i class="fas fa-comment-dots"></i>
-                                    <textarea class="form-control form-control-glass" rows="4" placeholder="Briefly describe your business, target audience, and current monthly revenue goals..." required></textarea>
+                                    <textarea class="form-control form-control-glass" rows="4" placeholder="Describe your business, target audience, and revenue goals..." required></textarea>
                                 </div>
                             </div>
 

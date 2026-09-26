@@ -71,9 +71,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
                 });
 
                 const data = await response.json();
@@ -85,7 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     ctaForm.reset();
                 } else {
-                    throw new Error(data.message || 'Submission failed. Please try again.');
+                    let errorMsg = data.message || 'Submission failed. Please try again.';
+                    if (window.location.protocol === 'file:') {
+                        errorMsg += ' (Web3Forms requires running on a local server like Live Server or http://localhost, not directly as file://)';
+                    }
+                    throw new Error(errorMsg);
                 }
             } catch (error) {
                 if (formResult) {

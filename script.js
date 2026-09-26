@@ -39,13 +39,65 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // CTA Form Submission Handling
+    // CTA Form Submission Handling via Web3Forms
     const ctaForm = document.getElementById('ctaForm');
+    const formResult = document.getElementById('formResult');
+    const submitBtn = document.getElementById('submitBtn');
+
     if (ctaForm) {
-        ctaForm.addEventListener('submit', function (e) {
+        ctaForm.addEventListener('submit', async function (e) {
             e.preventDefault();
-            alert('Thank you for requesting a consultation! Naveen R. will get back to you shortly.');
-            ctaForm.reset();
+
+            const formData = new FormData(ctaForm);
+            const accessKey = formData.get('access_key');
+
+            // Quick check if access key has been replaced
+            if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+                if (formResult) {
+                    formResult.className = 'mt-3 p-3 rounded-3 text-center small bg-warning text-dark d-block';
+                    formResult.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Please add your Web3Forms <strong>Access Key</strong> in <code>index.html</code> (line ~1089).';
+                }
+                return;
+            }
+
+            // Set loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> <span>Sending Request...</span>';
+            }
+            if (formResult) {
+                formResult.className = 'mt-3 p-3 rounded-3 text-center small bg-dark text-white-50 border border-secondary d-block';
+                formResult.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting your request...';
+            }
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.status === 200 && data.success) {
+                    if (formResult) {
+                        formResult.className = 'mt-3 p-3 rounded-3 text-center small bg-success bg-opacity-25 text-white border border-success d-block';
+                        formResult.innerHTML = '<i class="fas fa-check-circle text-warning me-2"></i><strong>Thank you!</strong> Your consultation request has been sent successfully. I will get back to you within 24 hours.';
+                    }
+                    ctaForm.reset();
+                } else {
+                    throw new Error(data.message || 'Submission failed. Please try again.');
+                }
+            } catch (error) {
+                if (formResult) {
+                    formResult.className = 'mt-3 p-3 rounded-3 text-center small bg-danger bg-opacity-25 text-white border border-danger d-block';
+                    formResult.innerHTML = `<i class="fas fa-times-circle text-danger me-2"></i><strong>Oops!</strong> ${error.message || 'Something went wrong. Please try again later.'}`;
+                }
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span class="btn-text">Request Free Consultation</span> <i class="fas fa-arrow-right btn-icon"></i>';
+                }
+            }
         });
     }
 

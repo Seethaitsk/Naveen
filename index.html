@@ -1084,20 +1084,27 @@
                         <h3 class="text-white fw-bold mb-1">Book Your Free Strategy Call</h3>
                         <p class="text-gray small mb-4">Fill out the brief form below and I will get back to you within 24 hours.</p>
 
-                        <form id="ctaForm">
+                        <form id="ctaForm" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Web3Forms Access Key & Config -->
+                            <input type="hidden" name="access_key" value="8bd5055f-5901-45a1-a13f-6fdb07be6edf">
+                            <input type="hidden" name="subject" value="New Strategy Call Request - Naveen R Website">
+                            <input type="hidden" name="from_name" value="Naveen R Portfolio Leads">
+                            <!-- Anti-spam Honeypot -->
+                            <input type="checkbox" name="botcheck" class="d-none" style="display: none;">
+
                             <div class="row g-3">
                                 <div class="col-md-6 mb-2">
                                     <label class="form-label-custom">Your Name</label>
                                     <div class="input-icon-wrapper">
                                         <i class="fas fa-user"></i>
-                                        <input type="text" class="form-control form-control-glass" placeholder="John Doe" required>
+                                        <input type="text" name="name" class="form-control form-control-glass" placeholder="John Doe" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-2">
                                     <label class="form-label-custom">Your Email</label>
                                     <div class="input-icon-wrapper">
                                         <i class="fas fa-envelope"></i>
-                                        <input type="email" class="form-control form-control-glass" placeholder="john@example.com" required>
+                                        <input type="email" name="email" class="form-control form-control-glass" placeholder="john@example.com" required>
                                     </div>
                                 </div>
                             </div>
@@ -1106,12 +1113,12 @@
                                 <label class="form-label-custom">Select Your Core Objective</label>
                                 <div class="input-icon-wrapper">
                                     <i class="fas fa-bullseye"></i>
-                                    <select class="form-select form-control-glass" required>
+                                    <select name="objective" class="form-select form-control-glass" required>
                                         <option value="" selected disabled>Select primary service goal...</option>
-                                        <option value="web-dev">Custom Web Development & Redesign</option>
-                                        <option value="funnel-cro">High-Converting Sales Funnel & CRO</option>
-                                        <option value="ads-marketing">Paid Ads & Digital Marketing Pipeline</option>
-                                        <option value="full-stack">Complete End-to-End Growth Engine</option>
+                                        <option value="Custom Web Development & Redesign">Custom Web Development & Redesign</option>
+                                        <option value="High-Converting Sales Funnel & CRO">High-Converting Sales Funnel & CRO</option>
+                                        <option value="Paid Ads & Digital Marketing Pipeline">Paid Ads & Digital Marketing Pipeline</option>
+                                        <option value="Complete End-to-End Growth Engine">Complete End-to-End Growth Engine</option>
                                     </select>
                                 </div>
                             </div>
@@ -1120,14 +1127,17 @@
                                 <label class="form-label-custom">Tell Me About Your Business Goals</label>
                                 <div class="input-icon-wrapper textarea-wrapper">
                                     <i class="fas fa-comment-dots"></i>
-                                    <textarea class="form-control form-control-glass" rows="4" placeholder="Describe your business, target audience, and revenue goals..." required></textarea>
+                                    <textarea name="message" class="form-control form-control-glass" rows="4" placeholder="Describe your business, target audience, and revenue goals..." required></textarea>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-yellow btn-lg w-100 py-3 fw-bold rounded-3 d-flex align-items-center justify-content-center gap-2">
-                                <span>Request Free Consultation</span>
-                                <i class="fas fa-arrow-right"></i>
+                            <button type="submit" id="submitBtn" class="btn btn-yellow btn-lg w-100 py-3 fw-bold rounded-3 d-flex align-items-center justify-content-center gap-2">
+                                <span class="btn-text">Request Free Consultation</span>
+                                <i class="fas fa-arrow-right btn-icon"></i>
                             </button>
+
+                            <!-- In-card Dynamic Status Feedback -->
+                            <div id="formResult" class="mt-3 p-3 rounded-3 text-center small d-none"></div>
                         </form>
                     </div>
                 </div>
